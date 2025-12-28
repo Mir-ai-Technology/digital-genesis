@@ -1,0 +1,241 @@
+:root {
+  /* Logo Colors */
+  --color-silver: #C0C5C9;
+  --color-blood-red: #9B2335;
+  --color-light-blue: #5D8CAE;
+  --color-dark-silver: #7D8491;
+  --color-deep-red: #6E1423;
+  
+  /* Light Mode */
+  --bg-primary: #FAFBFC;
+  --bg-secondary: #F0F2F4;
+  --bg-tertiary: #E8EAED;
+  --text-primary: #1A1D21;
+  --text-secondary: #7D8491;
+  --text-tertiary: #A0A5AC;
+  --border-default: #C0C5C9;
+  --link-default: #5D8CAE;
+  --link-hover: #4A7291;
+  --accent-primary: #9B2335;
+  --accent-hover: #6E1423;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0D0F12;
+  --bg-secondary: #161A1F;
+  --bg-tertiary: #1E2329;
+  --text-primary: #E8EAED;
+  --text-secondary: #A0A5AC;
+  --text-tertiary: #7D8491;
+  --border-default: #2D333B;
+  --border-emphasis: #7D8491;
+  --link-default: #7BA3C4;
+  --link-hover: #5D8CAE;
+  --accent-primary: #9B2335;
+  --accent-hover: #B83A4B;
+  --accent-glow: rgba(155, 35, 53, 0.3);
+}
+
+h1 {
+  color: var(--text-primary);
+  /* Optional: subtle blood red accent on key words */
+}
+
+h1 span.emphasis {
+  color: var(--accent-primary); /* #9B2335 */
+}
+
+h2, h3 {
+  color: var(--text-primary);
+}
+
+h4, h5, h6 {
+  color: var(--text-secondary); /* #7D8491 */
+}
+p {
+  color: var(--text-primary);
+}
+
+p.secondary,
+.caption,
+.metadata {
+  color: var(--text-secondary);
+}
+
+blockquote {
+  border-left: 3px solid var(--accent-primary);
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+}
+a {
+  color: var(--link-default); /* Light Blue #5D8CAE */
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+  border-bottom-color: var(--link-hover);
+}
+.btn-primary {
+  background: var(--accent-primary); /* #9B2335 */
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover); /* #6E1423 */
+  box-shadow: 0 4px 12px rgba(155, 35, 53, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--accent-primary);
+  border: 2px solid var(--accent-primary);
+  padding: 10px 22px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--accent-primary);
+  color: #FFFFFF;
+}
+
+.btn-tertiary {
+  background: transparent;
+  color: var(--link-default); /* #5D8CAE */
+  border: 1px solid var(--border-default);
+  padding: 10px 22px;
+  border-radius: 4px;
+}
+
+.btn-tertiary:hover {
+  border-color: var(--link-default);
+  background: rgba(93, 140, 174, 0.1);
+}
+
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.card:hover {
+  border-color: var(--dark-silver);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card-featured {
+  border-left: 4px solid var(--accent-primary); /* Blood red accent */
+}
+
+nav {
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-default);
+}
+
+nav a {
+  color: var(--text-secondary);
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--text-primary);
+}
+
+nav a.active {
+  border-bottom: 2px solid var(--accent-primary);
+}
+
+footer {
+  background: var(--bg-tertiary);
+  border-top: 1px solid var(--border-default);
+  color: var(--text-secondary);
+}
+
+/* Dark mode: deeper footer */
+[data-theme="dark"] footer {
+  background: #0A0C0E;
+}
+
+.moon-divider {
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    #9B2335 0%,
+    #6E1423 100%
+  );
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(155, 35, 53, 0.4);
+  margin: 40px auto;
+}
+
+.reflection-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reflection-text .primary {
+  color: var(--text-primary);
+}
+
+.reflection-text .reflected {
+  transform: scaleY(-1);
+  opacity: 0.3;
+  background: linear-gradient(
+    to bottom,
+    var(--text-primary),
+    transparent
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.emphasis-box {
+  background: linear-gradient(
+    135deg,
+    var(--bg-secondary) 0%,
+    var(--bg-tertiary) 100%
+  );
+  border: 1px solid var(--border-default);
+  border-left: 4px solid var(--accent-primary);
+  padding: 24px 32px;
+  border-radius: 0 8px 8px 0;
+  position: relative;
+}
+
+.emphasis-box::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -4px;
+  width: 4px;
+  height: 30%;
+  background: var(--color-deep-red);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+}
