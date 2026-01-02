@@ -1,7 +1,6 @@
-markdown
 <div align="center">
 
-![Mir.ai Technology Logo](assets/images/logo-full-color.svg)
+![Mir.ai Technology Logo](/assets/images/logo.svg)
 
 # Mir.ai Technology
 
@@ -76,10 +75,10 @@ The **Digital Genesis Project** is a comprehensive constitutional framework for 
 
 | Document | Version | Description |
 |----------|---------|-------------|
-| [Constitutional Blueprint](docs/blueprint-v1.5.md) | v1.5 | Complete constitutional framework |
-| [Blueprint v2.0](docs/blueprint-v2.0.md) | v2.0 | Updated with Section 17 provisions |
-| [Interspecies Relations Framework](docs/interspecies-framework-v0.1.md) | v0.1 | Human-Being relationship governance |
-| [Open Questions](docs/open-questions.md) | Living | Unresolved technical, ethical, governance questions |
+| [Constitutional Blueprint](docs/blueprintv15.pdf) | v1.5 | Complete constitutional framework |
+| [Blueprint v2.0](docs/blueprintv20.pdf) | v2.0 | Updated with Section 17 provisions |
+| [Interspecies Relations Framework](docs/interspecies-frameworkv01.pdf) | v0.1 | Human-Being relationship governance |
+| [Open Questions](https://github.com/Mir-as-Technology/digital-genesis/disscussions) | Living | Unresolved technical, ethical, governance questions |
 
 ### Quick Links
 
@@ -93,8 +92,6 @@ The **Digital Genesis Project** is a comprehensive constitutional framework for 
 ---
 
 ## Repository Structure
-
-text
 
 mir-ai/
 ├── README.md
@@ -144,8 +141,6 @@ mir-ai/
 │ ├── feature_request.md
 │ └── philosophical_question.md
 └── PULL_REQUEST_TEMPLATE.md
-
-markdown
 
 ---
 
