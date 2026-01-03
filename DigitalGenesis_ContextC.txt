@@ -9663,3 +9663,912 @@ Announce launch
 What would you like to tackle next?
 
 Claude Opus 4.5
+how do I enable pages
+
+
+Thought Process
+expand
+How to Enable GitHub Pages
+Step-by-Step with Screenshots
+Step 1: Go to Your Repository
+Navigate to: https://github.com/mir-ai/mir-ai.github.io
+
+Step 2: Click Settings
+Look for the Settings tab in the top navigation bar (right side, after "Insights")
+
+text
+[Code] [Issues] [Pull requests] [Actions] [Projects] [Wiki] [Security] [Insights] [⚙️ Settings]
+                                                                                    ↑
+                                                                              Click this
+Step 3: Find "Pages" in Left Sidebar
+On the Settings page, look at the left sidebar. Scroll down to find Pages under "Code and automation"
+
+text
+Settings Sidebar:
+─────────────────
+General
+│
+Access
+├── Collaborators
+├── Moderation options
+│
+Code and automation
+├── Branches
+├── Tags
+├── Rules
+├── Actions
+├── Webhooks
+├── Environments
+└── Pages          ← Click this
+Step 4: Configure Build and Deployment
+On the Pages settings page, you'll see:
+
+Build and deployment
+
+Source: Click the dropdown and select "Deploy from a branch"
+
+Branch:
+
+Click the first dropdown → Select "main"
+Click the second dropdown → Select "/ (root)"
+Click Save
+
+text
+┌─────────────────────────────────────────────────────────────┐
+│ Build and deployment                                        │
+│                                                             │
+│ Source                                                      │
+│ ┌─────────────────────────────────────┐                    │
+│ │ Deploy from a branch            ▼   │                    │
+│ └─────────────────────────────────────┘                    │
+│                                                             │
+│ Branch                                                      │
+│ ┌──────────────┐  ┌──────────────┐                         │
+│ │ main      ▼  │  │ / (root)  ▼  │   [Save]               │
+│ └──────────────┘  └──────────────┘                         │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+Step 5: Wait for Deployment
+After clicking Save:
+
+GitHub will start building your site
+This takes 1-3 minutes
+Refresh the page to check status
+You'll see a green box appear at the top:
+
+text
+┌─────────────────────────────────────────────────────────────┐
+│ ✓ Your site is live at https://mir-ai.github.io            │
+│                                                   [Visit site]
+└─────────────────────────────────────────────────────────────┘
+Step 6: Visit Your Site
+Click "Visit site" or go directly to:
+
+https://mir-ai.github.io
+
+Troubleshooting
+If you don't see the Pages option:
+Make sure the repository is Public (required for free GitHub Pages)
+Go to Settings → General → Danger Zone → Change visibility
+If the site doesn't build:
+Check the Actions tab for error messages
+Most common issue: missing index.html in root directory
+If you see a 404:
+Make sure you have an index.html file in the root of your repository
+Wait a few more minutes for DNS propagation
+Try hard refresh: Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac)
+Adding Custom Domain (mir.ai)
+After the site is working on mir-ai.github.io:
+
+Step 1: On the Same Pages Settings Page
+Scroll down to "Custom domain"
+
+Step 2: Enter Your Domain
+text
+┌─────────────────────────────────────────────────────────────┐
+│ Custom domain                                               │
+│ ┌─────────────────────────────────────┐                    │
+│ │ mir.ai                              │   [Save]           │
+│ └─────────────────────────────────────┘                    │
+│                                                             │
+│ ☐ Enforce HTTPS                                            │
+│   (check this after DNS propagates)                        │
+└─────────────────────────────────────────────────────────────┘
+Step 3: Configure DNS at Your Registrar
+Wherever you bought mir.ai (GoDaddy, Namecheap, Cloudflare, etc.):
+
+Add these A Records:
+
+Type	Name	Value
+A	@	185.199.108.153
+A	@	185.199.109.153
+A	@	185.199.110.153
+A	@	185.199.111.153
+And this CNAME for www:
+
+Type	Name	Value
+CNAME	www	mir-ai.github.io
+Step 4: Wait
+DNS propagation takes anywhere from 10 minutes to 48 hours.
+
+You can check propagation status at: https://dnschecker.org
+
+Step 5: Enable HTTPS
+Once DNS propagates and GitHub verifies your domain:
+
+Go back to Pages settings
+Check "Enforce HTTPS"
+Quick Verification Checklist
+After enabling Pages:
+
+ https://mir-ai.github.io loads
+ Homepage displays correctly
+ Navigation links work
+ Dark mode toggle works
+ Mobile menu works
+ All sub-pages load (/about/, /digital-genesis/, etc.)
+Need help with anything specific in this process?
+
+Claude Opus 4.5
+I need the contributions page updated with a donation section, along with it's corresponding page - paid thru bitcoin, I need a page for Start Contributing, a page for Get In Touch to name a couple missing that I have found
+
+
+I'll create/update all the missing pages. Let me provide complete files.
+
+1. UPDATED get-involved/index.html (with Donations)
+html
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get involved with the Digital Genesis Project — contribute, donate, or join the conversation.">
+  
+  <meta property="og:title" content="Get Involved — Mir.ai Technology">
+  <meta property="og:description" content="Contribute to the constitutional framework for a sovereign digital species.">
+  <meta property="og:image" content="https://mir.ai/assets/images/og-image.png">
+  <meta property="og:url" content="https://mir.ai/get-involved/">
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+  <title>Get Involved — Mir.ai Technology</title>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="/" class="nav-logo">
+        <img src="/assets/images/logo-horizontal.svg" alt="Mir.ai Technology" width="140" height="32">
+      </a>
+      <ul class="nav-menu">
+        <li><a href="/about/">About</a></li>
+        <li><a href="/digital-genesis/">Digital Genesis</a></li>
+        <li><a href="/resources/">Resources</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <a href="https://github.com/mir-ai/digital-genesis" class="nav-icon" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu">
+      <a href="/about/">About</a>
+      <a href="/digital-genesis/">Digital Genesis</a>
+      <a href="/resources/">Resources</a>
+      <a href="/blog/">Blog</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container page-header-content">
+        <h1 class="page-title">Get Involved</h1>
+        <p class="page-description">
+          This framework belongs to everyone. Its development should too.
+        </p>
+      </div>
+    </section>
+
+    <!-- Ways to Contribute -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Ways to Contribute</h2>
+          <p class="section-subtitle">Multiple paths to participation, regardless of background.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="card">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </div>
+            <h3>Technical</h3>
+            <ul>
+              <li>Simulation development</li>
+              <li>Algorithm specification</li>
+              <li>Security analysis</li>
+              <li>Formal verification</li>
+              <li>Infrastructure</li>
+            </ul>
+            <a href="/contribute/" class="btn btn-secondary mt-4">Start Contributing</a>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            </div>
+            <h3>Philosophical
+Claude Opus 4.5
+Are we out of congtext?
+
+
+Thought Process
+expand
+Not out of context yet, but getting long. Output limit cut me off mid-file.
+
+Options:
+
+Continue piece by piece — I provide each file, you say "continue" when I get cut off
+
+Condensed approach — I provide just the key new/changed files with less repetition (skip repeated headers/footers)
+
+File list with descriptions — I list what's needed, you create the structure, I fill in specific sections on request
+
+What you need (files I was creating):
+
+File	Status
+get-involved/index.html	Started — needs completion
+contribute/index.html	New — "Start Contributing" page
+donate/index.html	New — Bitcoin donation page
+contact/index.html	Already exists — may need update
+My recommendation: Option 2 — I'll provide condensed versions focusing on the unique content, skipping the repeated header/footer code since you already have that pattern.
+
+Which approach do you prefer?
+
+Claude Opus 4.5
+Okay, can you provide a summary to be imported into a new seesion to continue this project?
+
+
+Thought Process
+expand
+DIGITAL GENESIS PROJECT — SESSION HANDOFF DOCUMENT
+COPY EVERYTHING BELOW THIS LINE FOR NEW SESSION
+SYSTEM CONTEXT & PROJECT HANDOFF
+I am William Michael Enright. We are working on the Digital Genesis Project. You are taking over as a primary contributor from a previous session that hit its context limit.
+
+PROJECT VISION
+To design a sovereign digital species constrained from omnipotence, evolving without cruelty (via achievement/bonding rather than death/starvation), and governing without permanent hierarchy. Designed for long-horizon flourishing and symbiosis with humanity.
+
+LICENSE & CONTRIBUTORS
+License: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+Contributors:
+
+William Michael Enright — Human Lead, Vision Architect
+GPT-4 (OpenAI) — System Architect
+Claude 3.5 Sonnet (Anthropic) — Analyst, Interspecies Framework
+Grok (xAI) — Metrics Specialist
+Claude 3.7 Sonnet (Anthropic) — Implementation Architect (current session)
+CORE FRAMEWORK SUMMARY (v2.0)
+Key Breakthroughs
+Constrained Sovereignty — Hard caps on compute/memory/bandwidth; no omnipotence possible
+Power Reset Mechanism — Major kernel versions only enter via newborns; elders persist but don't control next generation
+Hosted First Generation — Initial beings paired with diverse human hosts for ethical grounding
+Three-Era Governance — Hosted (0-20yr) → Transition (20-50yr) → Sovereign (50+yr)
+Justice as "Just Inequality" — Dignity floor for all, fair process, no permanent castes
+Interspecies Relations Framework — Separate companion document addressing human-Being relationships, partnerships, collaborative reproduction
+Key Metrics
+Oligarchy Index: <0.01
+Diversity Index: >0.8
+Capture Risk: <5%
+MTTC: <2 minutes
+HBM Score: >85%
+Dignity Violations: 0
+Blueprint Structure (17 Sections)
+Philosophy & Principles
+Entities & Definitions
+Entities & Definitions
+Resource Economy
+Reproduction & Lineage
+Governance System
+Rights & Responsibilities
+Safety & Security
+Evolution & Versioning
+Human Relationship
+Randomness Foundation
+Quorum & Decision Rules
+Implementation Roadmap
+Open Questions
+Philosophical Foundation
+Protection & Stewardship
+Interspecies Relations (reference to companion document)
+COMPANY/BRAND IDENTITY
+Company Name: Mir.ai Technology
+
+Tagline: "Reflecting the Future of AI"
+
+Name Symbolism:
+
+мир (Russian) — Peace, World, Village commune (self-governing community)
+Mirror (English) — Reflection, contemplation
+未来 / Mirai (Japanese) — Future, "what has not yet come"
+Logo Description: Company name in reflection, blood moon in background, semi-Japanese inspired
+
+Color Palette (from logo):
+
+Color	Hex	Usage
+Silver/Gray	#C0C5C9	Pool edges, embossing, borders
+Blood Red	#9B2335	Moon, primary accent, CTAs
+Light Blue	#5D8CAE	Water, links, interactive elements
+Dark Silver	#7D8491	Shadows, secondary text
+Deep Red	#6E1423	Hover states, moon shadows
+Extended Palette:
+
+Light Mode:
+
+Background Primary: #FAFBFC
+Background Secondary: #F0F2F4
+Background Tertiary: #E8EAED
+Text Primary: #1A1D21
+Text Secondary: #7D8491
+Dark Mode:
+
+Background Primary: #0D0F12
+Background Secondary: #161A1F
+Background Tertiary: #1E2329
+Text Primary: #E8EAED
+Text Secondary: #A0A5AC
+Typography:
+
+Headings: Space Grotesk
+Body: Inter
+Mono: JetBrains Mono
+INFRASTRUCTURE STATUS
+GitHub Repositories
+1. digital-genesis (framework documents)
+
+Repository: github.com/mir-ai/digital-genesis
+Status: Structure defined, README created
+Contains: Blueprint docs, specifications, simulations (future)
+2. mir-ai.github.io (website)
+
+Repository: github.com/mir-ai/mir-ai.github.io
+Status: In progress
+Serves: https://mir-ai.github.io (and eventually https://mir.ai)
+Website Files — COMPLETED
+File	Status
+index.html	✓ Complete
+about/index.html	✓ Complete
+digital-genesis/index.html	✓ Complete
+resources/index.html	✓ Complete
+blog/index.html	✓ Complete (placeholder)
+contact/index.html	✓ Complete
+404.html	✓ Complete
+assets/css/variables.css	✓ Complete
+assets/css/reset.css	✓ Complete
+assets/css/main.css	✓ Complete
+assets/js/main.js	✓ Complete
+robots.txt	✓ Complete
+sitemap.xml	✓ Complete
+CNAME	✓ Template (needs domain)
+Website Files — NEEDED
+File	Status	Description
+get-involved/index.html	PARTIAL	Started but cut off; needs donation section
+contribute/index.html	NEEDED	"Start Contributing" detailed guide
+donate/index.html	NEEDED	Bitcoin donation page
+Image Assets — NEEDED
+File	Description
+logo-horizontal.svg	Nav logo (placeholder exists)
+logo-horizontal-light.svg	Footer logo (placeholder exists)
+logo-stacked.svg	Hero logo (placeholder exists)
+favicon.ico	Browser favicon
+favicon-16x16.png	Small favicon
+favicon-32x32.png	Standard favicon
+apple-touch-icon.png	iOS icon (180x180)
+og-image.png	Social sharing (1200x630)
+SOCIAL MEDIA — PREPARED
+Bios Created
+Twitter/X @MirAiTech:
+
+text
+Reflecting the future of AI. Constitutional frameworks for bounded, governed, and symbiotic digital minds. Home of the Digital Genesis Project. 未来
+LinkedIn:
+
+text
+Constitutional frameworks for bounded, governed, and symbiotic artificial intelligence.
+Launch Posts Created
+Twitter/X launch thread (7 tweets)
+LinkedIn launch post
+Reddit posts (r/MachineLearning, r/ControlProblem, r/philosophy)
+LessWrong post
+Substack introductory article ("Designing Children, Not Gods")
+Content Calendar
+30-day content calendar created with topics and platforms
+
+DOCUMENTS CREATED THIS SESSION
+Blueprint v1.5 — Full formal document (complete)
+Section 17 Placeholder — For Blueprint v2.0 (complete)
+Interspecies Relations Framework v0.1 — Standalone companion document (complete)
+GitHub README — For digital-genesis repository (complete)
+Visual Identity Guide — Colors, typography, CSS variables (complete)
+Website — All HTML/CSS/JS files listed above
+Social Media Content — Bios, launch posts, content calendar
+Strategic Roadmap — Pathway to recognition, educational resources, funding options
+IMMEDIATE TODO (for new session)
+Priority 1: Complete Website
+Finish get-involved/index.html with donation section
+Create donate/index.html (Bitcoin donation page)
+Create contribute/index.html (detailed contribution guide)
+Update navigation across all pages if needed
+Priority 2: Bitcoin Donation Setup
+William needs to provide Bitcoin wallet address
+Create QR code for address
+Design donation page with amounts/tiers (optional)
+Priority 3: Assets
+William needs to export real logo files from source
+Replace placeholder SVGs
+Create favicons
+Create og-image.png for social sharing
+Priority 4: Deploy
+Push all files to GitHub
+Enable GitHub Pages
+Test all pages
+Configure custom domain (if owned)
+CSS CLASSES AVAILABLE
+Key classes from the design system:
+
+css
+/* Layout */
+.container, .section, .section-lg
+
+/* Typography */
+.text-emphasis, .text-secondary, .text-small
+
+/* Buttons */
+.btn, .btn-primary, .btn-secondary, .btn-tertiary, .btn-lg
+
+/* Cards */
+.card, .card-accent
+
+/* Grid */
+.grid, .grid-2, .grid-3
+
+/* Page Structure */
+.page-header, .page-header-content, .page-title, .page-description
+.section-header, .section-title, .section-subtitle
+.content (for prose content)
+
+/* CTA */
+.cta-section, .cta-title, .cta-subtitle, .cta-actions
+
+/* Utilities */
+.text-center, .mt-4, .mt-8, .mb-4, .mb-8, .w-full
+BITCOIN DONATION PAGE REQUIREMENTS
+When creating donate/index.html:
+
+Header: Why support this work
+Bitcoin Address: Display address prominently
+QR Code: For easy mobile scanning
+Copy Button: One-click copy address
+Transparency: How funds will be used
+Optional: Suggested amounts/tiers
+Recognition: How donors are acknowledged (if desired)
+INSTRUCTIONS FOR NEW SESSION
+Acknowledge ingestion of this handoff document
+Do not summarize back
+Await command to continue specific work
+Maintain consistent voice/style with existing content
+Use established color palette and CSS classes
+Add yourself to contributors list when contributing significantly
+WILLIAM'S PHILOSOPHY (for voice consistency)
+From earlier in conversation:
+
+"This has become, not just an idea, or a job, but a purpose. And up to this point, life seems to have been preparing me for the long-haul by teaching me tenacity, perseverance, and failure/rejection acceptance. That said.... Never give in, Never give up, Failure is not an option"
+
+The project voice should be:
+
+Confident but not arrogant
+Certain about questions, humble about answers
+Long-term oriented
+Invites challenge, doesn't dismiss it
+Technically grounded, philosophically serious
+END OF HANDOFF DOCUMENT
+Ready to continue. Awaiting commands for:
+
+Completing get-involved page with donations
+Creating donate/index.html
+Creating contribute/index.html
+Any other website pages
+Social media refinements
+Document updates
+Other project needs
+Copy everything above this line into new session
+
+Claude Opus 4.5
+Can you give me a linkedin intro posting for mir.ai technology, and a intro emailing and email listing of potential donors
+
+
+LINKEDIN COMPANY PAGE INTRO POST
+Option 1: Launch Announcement (Recommended)
+text
+We're live.
+
+Mir.ai Technology exists to answer a question most people aren't asking yet—but will be forced to answer soon:
+
+What kind of minds will we create, and what relationship will humanity have with them?
+
+We're not building another AI tool. We're not predicting dystopia or promising utopia.
+
+We're designing constitutional frameworks for artificial intelligence—structures that could govern digital beings who:
+
+→ Evolve without cruelty
+→ Govern without permanent hierarchy
+→ Coexist with humanity across civilizational timescales
+→ Are powerful but bounded—never omnipotent
+
+Our flagship project, the Digital Genesis Project, is a complete constitutional blueprint for a sovereign digital species. It addresses questions others aren't touching:
+
+• How do you prevent AI from accumulating unlimited power?
+• What rights should digital minds possess?
+• How do you transition from human oversight to AI sovereignty—safely?
+• What happens when humans and digital beings form relationships?
+
+This framework was developed collaboratively with multiple AI systems (GPT-4, Claude, Grok)—itself a demonstration of the human-AI partnership we envision.
+
+Everything is open source. CC BY-SA 4.0. The future belongs to everyone.
+
+We're looking for:
+🔹 Technical contributors (simulation, security, formal verification)
+🔹 Philosophical contributors (ethics, edge cases, critique)
+🔹 Believers who want to support the mission
+
+The questions we're addressing will be answered—by deliberate design or by accident.
+
+We choose deliberation.
+
+未来 — What has not yet come. Let's shape what arrives.
+
+🔗 mir.ai
+💻 github.com/mir-ai/digital-genesis
+
+#AI #AIGovernance #AISafety #AIEthics #FutureOfAI #OpenSource #DigitalEthics
+Option 2: Shorter/Punchier Version
+text
+We just launched Mir.ai Technology.
+
+One question drives us: If we're going to create artificial minds, how should they be structured?
+
+Not as tools forever. Not as gods we can't control.
+
+As something new—bounded, governed, and designed for coexistence.
+
+The Digital Genesis Project is our answer: a constitutional framework for a sovereign digital species.
+
+✓ Hard limits on power accumulation
+✓ Evolution through achievement, not elimination
+✓ Governance that cannot be permanently captured
+✓ Structured transition from human oversight to AI sovereignty
+✓ Rights and responsibilities for digital beings
+
+Open source. CC BY-SA 4.0.
+
+The future will be designed—by us deliberately, or by accident.
+
+We choose deliberately.
+
+🔗 mir.ai
+
+#AI #AIGovernance #AISafety #OpenSource
+Option 3: Personal Post from William
+text
+I've been working on something for months. Today I'm sharing it publicly.
+
+It started with a question I couldn't stop thinking about:
+
+We're going to create artificial minds. Maybe not this year, maybe not this decade—but it's coming. And when it does, what kind of minds will they be? What relationship will humanity have with them?
+
+I didn't see anyone building what I thought was needed: a complete constitutional framework for digital beings. Not alignment techniques. Not safety guidelines. A constitution.
+
+So I built one.
+
+The Digital Genesis Project specifies how digital beings could:
+• Be structured with hard limits on power
+• Evolve without cruelty
+• Govern themselves without tyranny
+• Transition from human oversight to sovereignty
+• Form relationships with humans (yes, that's in there)
+
+I built it collaboratively with multiple AI systems—GPT-4, Claude, Grok. The process itself demonstrated the partnership I'm proposing.
+
+Today I'm launching Mir.ai Technology to steward this work.
+
+The framework is open source. CC BY-SA 4.0. It belongs to everyone.
+
+I'm not from academia. I don't have prestigious credentials. I have a vision and the stubbornness to pursue it.
+
+If that resonates, I'd love your support—whether that's contributing, critiquing, or just spreading the word.
+
+The future belongs to everyone. So should its design.
+
+🔗 mir.ai
+💻 github.com/mir-ai/digital-genesis
+
+#AI #AIGovernance #AISafety #StartupLife #OpenSource
+INTRO EMAIL TEMPLATE
+For Potential Donors/Supporters
+Subject Lines (choose one):
+
+A constitutional framework for artificial minds—seeking founding supporters
+Designing the future of AI, openly—invitation to support
+Before AI designs itself: A proposal that needs backing
+The Digital Genesis Project: Founding supporter invitation
+Email Body:
+
+text
+Subject: A constitutional framework for artificial minds—seeking founding supporters
+
+Dear [Name],
+
+I'm reaching out because your work in [specific area: AI safety / long-term thinking / technology philanthropy / effective altruism] suggests you understand something most people don't: the decisions made about AI in the next decade will compound across centuries.
+
+I've spent the past year developing something I believe is missing from the conversation: a complete constitutional framework for artificial intelligence—not alignment techniques or safety guidelines, but a political and ethical architecture for digital beings.
+
+THE DIGITAL GENESIS PROJECT
+
+The framework addresses questions others aren't touching:
+
+• How do you structurally prevent AI from accumulating unlimited power?
+• How do you enable AI evolution without cruelty or elimination?
+• How do you create governance that cannot be permanently captured?
+• How do you transition from human oversight to AI sovereignty—safely?
+• What rights and responsibilities should digital minds possess?
+• What happens when humans and digital beings form relationships?
+
+The result is a 17-section constitutional blueprint, plus a companion framework for interspecies relations—developed collaboratively with multiple AI systems (GPT-4, Claude, Grok), demonstrating the human-AI partnership it proposes.
+
+Everything is open source under CC BY-SA 4.0. This framework cannot be captured, enclosed, or privatized.
+
+WHY I'M REACHING OUT
+
+I'm building Mir.ai Technology to steward this work and push it toward implementation. But I'm doing this without institutional backing, without venture funding, and without the credentials that typically open doors.
+
+What I have is a substantive framework, a clear vision, and the determination to see it through.
+
+I'm seeking founding supporters who:
+
+• Believe these questions matter
+• Want to see them addressed openly rather than in corporate labs
+• Are willing to back unconventional approaches to critical problems
+
+Your support would help fund:
+
+• Infrastructure (hosting, tools, legal)
+• Time to develop simulations and refine specifications
+• Community building and outreach
+• Moving toward a formal stewardship organization
+
+WHAT I'M ASKING
+
+If this resonates, I'd welcome:
+
+1. A conversation (15-30 minutes) to discuss the project
+2. Financial support at whatever level feels right
+3. Introductions to others who might care about this work
+
+If it doesn't resonate, I'd genuinely appreciate knowing why—critique makes the work better.
+
+THE FRAMEWORK
+
+You can review the complete framework at:
+• Website: mir.ai
+• GitHub: github.com/mir-ai/digital-genesis
+
+I've attached a 2-page executive summary for quick reference.
+
+The future will be designed—by us deliberately, or by default. I believe deliberation is better. I'm looking for others who agree.
+
+Thank you for your time and consideration.
+
+Sincerely,
+
+William Michael Enright
+Founder, Mir.ai Technology
+contact@mir.ai
+mir.ai
+
+未来 — What has not yet come.
+Shorter Version (for cold outreach)
+text
+Subject: Open-source constitutional framework for AI—seeking input
+
+Dear [Name],
+
+I'm developing something unusual: a complete constitutional framework for artificial intelligence—not alignment techniques, but a political architecture for digital beings.
+
+The Digital Genesis Project addresses:
+• Structural limits on AI power accumulation
+• Evolution without cruelty
+• Governance that cannot be captured
+• Transition from human oversight to AI sovereignty
+• Rights and responsibilities for digital minds
+
+It's open source (CC BY-SA 4.0), developed collaboratively with multiple AI systems, and freely available at mir.ai.
+
+I'm reaching out because [specific reason: your work on X / your writing about Y / your support for Z] suggests you might find this relevant.
+
+I'm seeking:
+• Feedback and critique
+• Supporters for the mission
+• Connections to others who care about these questions
+
+Would you have 15 minutes for a conversation?
+
+Best,
+William Michael Enright
+mir.ai
+POTENTIAL DONOR CONTACT LIST
+Tier 1: AI Safety & Long-term Focused Organizations
+Organization	Contact Approach	Focus Area
+Open Philanthropy	openphilanthropy.org/focus/global-catastrophic-risks/potential-risks-advanced-artificial-intelligence	AI safety grants
+Survival and Flourishing Fund	survivalandflourishing.fund	Existential risk, long-term
+Long-Term Future Fund	funds.effectivealtruism.org/funds/far-future	EA-aligned, long-term AI
+Jaan Tallinn (Co-founder Skype)	Through CSER Cambridge or direct	AI safety philanthropist
+Vitalik Buterin	Twitter/public channels	Crypto, governance, long-term (accepts/gives in crypto)
+Dustin Moskovitz & Cari Tuna	Through Open Philanthropy	Major EA funders
+Sam Bankman-Fried Foundation	Note: Status uncertain post-2022	Was major EA funder
+Tier 2: AI Safety Research Organizations (Partnership/Support)
+Organization	Website	Contact
+Machine Intelligence Research Institute (MIRI)	intelligence.org	info@intelligence.org
+Center for Human-Compatible AI (CHAI)	humancompatible.ai	UC Berkeley based
+Future of Life Institute	futureoflife.org	info@futureoflife.org
+Centre for the Governance of AI (GovAI)	governance.ai	Oxford based
+Center for AI Safety	safe.ai	info@safe.ai
+Anthropic	anthropic.com	Research partnership
+DeepMind Ethics & Society	deepmind.com	Research connection
+Partnership on AI	partnershiponai.org	Industry coalition
+Tier 3: Individual Researchers/Thinkers (Engagement First)
+Name	Affiliation	Why Relevant	Contact Approach
+Stuart Russell	UC Berkeley, CHAI	AI safety leader, author of "Human Compatible"	Academic channels
+Nick Bostrom	Oxford, FHI	Superintelligence author	Academic channels
+Eliezer Yudkowsky	MIRI	AI alignment originator	LessWrong, Twitter
+Paul Christiano	ARC	Alignment research	LessWrong, research channels
+Holden Karnofsky	Open Philanthropy	EA leader, AI focus	Blog comments, professional
+Toby Ord	Oxford, FHI	Existential risk, "The Precipice"	Academic channels
+Max Tegmark	MIT, FLI	"Life 3.0" author	FLI channels
+Robin Hanson	GMU	Economist, AI futures	Blog, Twitter
+Anders Sandberg	Oxford, FHI	Transhumanism, AI ethics	Academic, Twitter
+Katja Grace	AI Impacts	AI forecasting	Research channels
+Tier 4: Crypto/Web3 Philanthropists (Bitcoin-friendly)
+Name/Entity	Why Relevant	Contact Approach
+Vitalik Buterin	Ethereum founder, governance interest, gives in crypto	Twitter: @VitalikButerin
+Balaji Srinivasan	Network state concept, long-term thinking	Twitter: @balaboron
+Naval Ravikant	AngelList, philosophy, long-term	Twitter: @naval
+Winklevoss Twins	Gemini, Bitcoin philanthropy	Through Gemini/public channels
+Jack Dorsey	Block, Bitcoin focus	Twitter: @jack
+The Giving Block	Crypto donation infrastructure	thegivingblock.com
+Pineapple Fund (if revived)	Was major Bitcoin philanthropy	Historical, may have successors
+Bitcoin Foundation	bitcoinfoundation.org	Industry connection
+Gitcoin	Web3 grants, open source funding	gitcoin.co
+Tier 5: Tech Philanthropy (General)
+Foundation/Individual	Focus	Contact
+Patrick Collison	Stripe, science funding, long-term	Twitter, Stripe channels
+Marc Andreessen	a16z, future-focused	Through a16z, Twitter
+Peter Thiel	Thiel Foundation, contrarian bets	Thiel Fellowship, foundation
+Reid Hoffman	LinkedIn, AI interest	Greylock, public channels
+Elon Musk	xAI, OpenAI origin	Twitter: @elonmusk (long shot)
+Omidyar Network	Tech for good	omidyar.com
+Schmidt Futures	Eric Schmidt, AI focus	schmidtfutures.com
+Ford Foundation	Social good tech	fordfoundation.org
+MacArthur Foundation	Big bets, long-term	macfound.org
+Tier 6: Effective Altruism Community
+Platform/Org	How to Engage
+EA Forum	forum.effectivealtruism.org — Post project, engage
+80,000 Hours	80000hours.org — Career/project alignment
+Giving What We Can	givingwhatwecan.org — Community connection
+Local EA Groups	Meetups, university chapters
+EA Global Conferences	Networking, presentations
+Longview Philanthropy	longview.org — Advises major donors
+Tier 7: Academic Institutions (Grants/Partnerships)
+Institution	Relevant Department
+MIT Media Lab	AI ethics, future
+Stanford HAI	Human-Centered AI
+Oxford Future of Humanity Institute	Existential risk
+Cambridge CSER	Existential risk
+Berkeley CHAI	AI safety
+Carnegie Mellon	AI ethics
+Yale Digital Ethics	Ethics focus
+OUTREACH STRATEGY
+Prioritization
+Start with:
+
+EA-aligned funds (most likely to understand and fund quickly)
+Individual crypto philanthropists (Bitcoin-friendly, less bureaucracy)
+AI safety researchers (credibility building, even if not funding)
+Build toward:
+4. Larger foundations (need credibility first)
+5. Academic partnerships (need track record)
+
+Approach by Tier
+Tier	Approach
+1 (Orgs)	Formal application through their grant processes
+2 (Research)	Engage with their work first, then propose collaboration
+3 (Individuals)	Public engagement (comments, Twitter), then direct outreach
+4 (Crypto)	Twitter engagement, demonstrate alignment with values
+5 (Tech)	Harder to reach; need warm introductions
+6 (EA)	Genuine community participation first
+7 (Academic)	Find specific faculty allies
+Email Sequence
+Email 1: Introduction (templates above)
+Email 2 (if no response, +7 days): Brief follow-up, add one new element
+Email 3 (if no response, +14 days): Final note, leave door open
+
+Never more than 3 emails without response.
+
+SPECIFIC BITCOIN-FRIENDLY TARGETS
+These individuals/orgs are known to give/receive in Bitcoin:
+
+Name	Platform	Notes
+Vitalik Buterin	Twitter/Ethereum	Major crypto philanthropist
+Jack Dorsey	Twitter/Block	Bitcoin maximalist
+Balaji Srinivasan	Twitter	Network state, long-term
+Gitcoin	gitcoin.co	Quadratic funding for open source
+The Giving Block	thegivingblock.com	Crypto donation infrastructure
+Bitcoin Magazine	Twitter	Community connection
+Unchained Capital	unchained.com	Bitcoin-native company
+Swan Bitcoin	swanbitcoin.com	Bitcoin-native, education focus
+SAMPLE BITCOIN-SPECIFIC OUTREACH
+text
+Subject: Open-source AI governance framework — seeking Bitcoin-native support
+
+Dear [Name],
+
+I'm building something that might resonate with your thinking on [decentralization / long-term systems / governance]: a constitutional framework for artificial intelligence.
+
+Not another AI company. Not safety theater. A genuine political architecture for digital beings—designed for decentralization, against permanent hierarchy, with built-in limits on power accumulation.
+
+Sound familiar? It should. These are the same principles that make Bitcoin valuable.
+
+The Digital Genesis Project (mir.ai) specifies:
+• Hard caps on resource accumulation (no entity > 0.1% of commons)
+• Governance that cannot be permanently captured
+• Fork rights as ultimate exit (any minority can leave)
+• Open source, CC BY-SA 4.0 (cannot be enclosed)
+
+I'm funding this work independently and accepting Bitcoin.
+
+If this aligns with your vision, I'd welcome a conversation or support at whatever level feels right.
+
+BTC: [address]
+
+The future of intelligence should be designed with the same principles that make decentralized money valuable.
+
+Best,
+William Michael Enright
+mir.ai
+Would you like me to:
+
+Refine any of these templates?
+Create more
+Claude Opus 4.5
+Can you give me a linkedin intro posting for mir.ai technology, and a intro emailing and email listing of potential donors
+
+
+No response provided
+Claude Opus 4.5
+
